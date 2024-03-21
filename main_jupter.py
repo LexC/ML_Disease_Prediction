@@ -58,9 +58,9 @@ def cv_scoring(estimator, X, y):
 
 # Initializing Models
 models = {
-	"SVC": SVC(),
-	"Gaussian NB": GaussianNB(),
-	"Random Forest": RandomForestClassifier(random_state=18)
+	"SV": SVC(),
+	"NB": GaussianNB(),
+	"RF": RandomForestClassifier(random_state=18)
 }
 
 # Producing cross validation score for the models
@@ -92,7 +92,7 @@ def printresults(model,X_train,y_train,y_cv,preds,model_name):
 
 	plt.figure(figsize=(12,8))
 	sns.heatmap(cf_matrix, annot=True)
-	plt.title(f"Confusion Matrix for {model_name} Classifier on Test Data")
+	plt.title(f"Confusion Matrix for {model_name} Classifier on Cross Validation Data")
 	plt.xlabel("Predicted")
 	plt.ylabel("True")
 	plt.show()
